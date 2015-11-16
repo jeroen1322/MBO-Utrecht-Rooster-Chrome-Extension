@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "MBO Utrecht Rooster",
+    "description": "Via deze extentie kan het rooster van de klas 3MB1A worden bekeken",
+    "version": "0.1",
+    "author": "Jeroen Grooten",
+    "browser_action": {
+        "default_icon": "icon.jpg",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/"
+        ]
+}
