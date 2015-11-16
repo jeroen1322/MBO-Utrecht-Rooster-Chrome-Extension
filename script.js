@@ -52,3 +52,5 @@ for (var c in classes) {
         };
     })(page);
 }
+
+//Credits aan Stephan Meijer. Hij heeft de JS makkelijker gemaakt om te updaten in de toekomst en van 250+ regels 54 gemaakt. :)
