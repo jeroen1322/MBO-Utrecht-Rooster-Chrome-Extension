@@ -46,7 +46,9 @@ var classes = {
 for (var c in classes) {
     var page = classes[c] || 'notfound';
 
-    document.getElementById(c).onclick = function() {
-        document.getElementById("myFrame").src = "http://roosters.mboutrecht.nl/TEC/roosters/47/c/" + page + '.htm';
-    }
+    (function(page) {
+        document.getElementById(c).onclick = function() {
+            document.getElementById("myFrame").src = "http://roosters.mboutrecht.nl/TEC/roosters/47/c/" + page + '.htm';
+        };
+    })(page);
 }
