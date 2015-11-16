@@ -15,7 +15,7 @@ Natuurlijk! Daarom heb ik het op GitHub gezet :)
 #Installatie
 De extensie is (nog) niet in de Chrome App Store, dus het moet handmatig.
 
-Download de repository en extract de map naar je gewenste locatie. Open Chrome en klik op de 3 strepen, rechts bovenin. Ga dan naar Instellingen en klik dan links boven Extensies. Wanneer je daar bent klik op Uitgepakte Extensie Laden. Klik hier op en selecteer dan de map MBO Utrecht Rooster Chrome Extension.
+Download de repository als .zip en extract de map naar je gewenste locatie. Open Chrome en klik op de 3 strepen, rechts bovenin. Ga dan naar Instellingen en klik dan links boven Extensies. Wanneer je daar bent klik op Uitgepakte Extensie Laden. Klik hier op en selecteer dan de map MBO-Utrecht-Rooster-Chrome-Extension-master. 
 
 #Extra
 Ja, het werkt. Nee, het is niet mooi. Ik heb nog veel plannen voor de toekomst! 
