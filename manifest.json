@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "MBO Utrecht Rooster",
-    "description": "Via deze extentie kan het rooster van de klas 3MB1A worden bekeken",
+    "description": "Chrome extensie om roosters van MBO Utrecht snel te kunnen bekijken",
     "version": "0.1",
     "author": "Jeroen Grooten",
     "browser_action": {
