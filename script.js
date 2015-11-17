@@ -1,3 +1,27 @@
+//Credits aan Stephan Meijer. Heeft JS overzichtelijker gemaakt en DRY geïmplimenteerd
+
+function choiceIsSet(yes) {
+    if (yes) {
+        document.getElementById("knoppen").style.display = "none";
+        document.getElementById("reset").style.display = "inline";
+    } else {
+        document.getElementById("knoppen").style.display = "inline";
+        document.getElementById("reset").style.display = "none";
+        document.getElementById("myFrame").src="homepage.html";
+    }
+}
+
+//Verwijder localStorage data zodat de klas opnieuw gekozen kan worden
+document.getElementById("reset").onclick = function() {
+    localStorage.removeItem("choice");
+    choiceIsSet(false);
+};
+
+//De rest
+function makePageURL(page) {
+    return "http://roosters.mboutrecht.nl/TEC/roosters/47/c/" + page + '.htm';
+}
+
 var classes = {
     "klas2MI1A": "c00001",
     "klas2MI1B": "c00002",
@@ -43,14 +67,26 @@ var classes = {
     "klasYISTDV": "c00042"
 };
 
-for (var c in classes) {
-    var page = classes[c] || 'notfound';
+for (var keyClass in classes) {
+    var page = classes[keyClass] || 'notfound';
 
-    (function(page) {
-        document.getElementById(c).onclick = function() {
-            document.getElementById("myFrame").src = "http://roosters.mboutrecht.nl/TEC/roosters/47/c/" + page + '.htm';
+    (function(page, keyClass) {
+        document.getElementById(keyClass).onclick = function() {
+            localStorage.setItem('choice', page);
+            document.getElementById("myFrame").src = makePageURL(page);
+
+            choiceIsSet(true);
         };
-    })(page);
+    })(page, keyClass);
 }
 
-//Credits aan Stephan Meijer. Hij heeft de JS makkelijker gemaakt om te updaten in de toekomst en van 250+ regels 54 gemaakt. :)
+var choice = localStorage.getItem('choice');
+
+if (choice) { // Wanneer er een keuze is gemaakt ...
+    // ... zet de iframe op de juiste rooster-pagina.
+    document.getElementById("myFrame").src = makePageURL(choice);
+    
+    // ... haal de klassen knoppen weg
+    choiceIsSet(true);
+}
+
