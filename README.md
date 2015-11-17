@@ -1,7 +1,7 @@
 #MBOUtrechtRoosterChromeExtension-
 Een Chrome extensie waarmee de roosters van de klassen van MBO Utrecht snel kunnen worden bekeken.
 
-Hoe werkt het?
+#Hoe werkt het?
 De popup window laat een iframe zien met daar boven de knoppen om de klas te selecteren. Elke button heeft een ID en wanneer er geklikt wordt, gaat er JavaScript in werking die de src van de iframe veranderd. Dit is geen goede manier en het was ook verschrikkelijk om te schrijven, maar het werkt. In de toekomst zal ik het beter aanpakken en dit project updaten.
 
 Nu ben ik bezig met wanneer de extensie voor de eerste keer wordt geladen, je de klas selecteerd en dat de keuze onthouden wordt. Zo hoef je niet de hele tijd wanneer je de extensie start de klas te selecteren.
