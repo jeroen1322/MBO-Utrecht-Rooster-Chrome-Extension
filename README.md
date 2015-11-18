@@ -1,7 +1,7 @@
 #MBOUtrechtRoosterChromeExtension-
 Een Chrome extensie waarmee de roosters van de klassen van MBO Utrecht snel kunnen worden bekeken.  
 
-//momenteel kunnen alleen de roosters van de Avademie Voor Techniek & ICT bekeken worden. Misschien worden er in de toekomst meer toe gevoegd. 
+//momenteel kunnen alleen de roosters van de Avademie Voor Techniek & ICT bekeken worden. Misschien worden er in de toekomst meer toegevoegd. 
 
 #Waarom?
 Ik vindt het handig, niet alleen voor mijzelf maar ook misschien voor mede studenten. Ook vond ik het een leuke uitdaging want ben al een poos niet meer bezig geweest met programmeren.
