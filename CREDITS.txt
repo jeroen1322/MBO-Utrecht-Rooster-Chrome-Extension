@@ -1,0 +1,3 @@
+*Credits voor idee gaan naar Abas Sharif :) 
+
+*Credits voor het improven van de JS en mee helpen gaan naar Stephan Meijer
