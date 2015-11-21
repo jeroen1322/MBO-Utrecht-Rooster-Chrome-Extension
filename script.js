@@ -1,23 +1,24 @@
-//Credits aan Stephan Meijer. Heeft JS overzichtelijker gemaakt en DRY geïmplimenteerd
+// Credits aan Stephan Meijer. Heeft JS overzichtelijker gemaakt en DRY geïmplimenteerd
 
-function choiceIsSet(yes) {
+function choiceIsSet(yes, page) {
     if (yes) {
         document.getElementById("knoppen").style.display = "none";
         document.getElementById("reset").style.display = "inline";
+        document.getElementById("myFrame").src = page;
     } else {
         document.getElementById("knoppen").style.display = "inline";
         document.getElementById("reset").style.display = "none";
-        document.getElementById("myFrame").src="homepage.html";
+        document.getElementById("myFrame").src = "homepage.html";
     }
 }
 
-//Verwijder localStorage data zodat de klas opnieuw gekozen kan worden
+// Verwijder localStorage data zodat de klas opnieuw gekozen kan worden
 document.getElementById("reset").onclick = function() {
     localStorage.removeItem("choice");
     choiceIsSet(false);
 };
 
-//De rest
+// De rest
 function makePageURL(page) {
     return "http://roosters.mboutrecht.nl/TEC/roosters/47/c/" + page + '.htm';
 }
@@ -73,9 +74,7 @@ for (var keyClass in classes) {
     (function(page, keyClass) {
         document.getElementById(keyClass).onclick = function() {
             localStorage.setItem('choice', page);
-            document.getElementById("myFrame").src = makePageURL(page);
-
-            choiceIsSet(true);
+            choiceIsSet(true, makePageURL(page));
         };
     })(page, keyClass);
 }
@@ -83,10 +82,7 @@ for (var keyClass in classes) {
 var choice = localStorage.getItem('choice');
 
 if (choice) { // Wanneer er een keuze is gemaakt ...
-    // ... zet de iframe op de juiste rooster-pagina.
-    document.getElementById("myFrame").src = makePageURL(choice);
-    
-    // ... haal de klassen knoppen weg
-    choiceIsSet(true);
+    // ... zet de iframe op de juiste rooster-pagina en haal de klassen knoppen weg.
+    choiceIsSet(true, makePageURL(choice));
 }
 
