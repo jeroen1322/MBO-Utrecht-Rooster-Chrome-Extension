@@ -1,53 +1,87 @@
 <html>
     <head>
+        <style>
+        button {
+          margin-bottom: 5px;
+          background: #e3e3e3;
+          border: 1px solid #bbb;
+          border-radius: 3px;
+          -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+          box-shadow: inset 0 0 1px 1px #f6f6f6;
+          color: #333;
+          font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
+          padding: 8px 0 9px;
+          text-align: center;
+          text-shadow: 0 1px 0 #fff;
+          width: 60px; 
+        }
+        button:hover {
+            background: #d9d9d9;
+            -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+            box-shadow: inset 0 0 1px 1px #eaeaea;
+            color: #222;
+            cursor: pointer; 
+        }
+        button:active {
+            background: #d0d0d0;
+            -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+            box-shadow: inset 0 0 1px 1px #e3e3e3;
+            color: #000; 
+        }
+        
+        #klasYISTDV{
+            width: 125px;
+        }
+
+        </style>
     </head>
     <body>
-
-        <button id="klas2MI1A">2MI1A</button>
-        <button id="klas2MI1B">2MI1B</button>
-        <button id="klas2MI2A">2MI2A</button>
-        <button id="klas3MB1A">3MB1A</button>
-        <button id="klas3MB2A">3MB2A</button>
-        <button id="klas3MB3A">3MB3A</button>
-        <button id="klas4IB1A">4IB1A</button>
-        <button id="klas4IB1B">4IB1B</button>
-        <button id="klas4IB2A">4IB2A</button>
-        <button id="klas4IB3A">4IB3A</button>
-        <button id="klas4IB4A">4IB4A</button>
-        <button id="klas4NB3A">4NB3A</button>
-        <button id="klas4NB4A">4NB4A</button>
-        <button id="klas4AM1A">4AM1A</button>
-        <button id="klas4AM1B">4AM1B</button>
-        <button id="klas4AM2A">4AM2A</button>
-        <button id="klas4AM3A">4AM3A</button>
-        <button id="klas4AM4A">4AM4A</button>
-        <button id="klasYTWK123">YTWK123</button> 
-        <button id="klas4ENG1">4ENG1</button>
-        <button id="klas4ENG2">4ENG2</button>
-        <button id="klas4IT1">4IT1</button>
-        <button id="klas4BM1">4BM1</button>
-        <button id="klas4BR1">4BR1</button>
-        <button id="klas4IT2">4IT2</button>
-        <button id="klas4IT3">4IT3</button>
-        <button id="klas4BM3">4BM3</button>
-        <button id="klas4BR2">4BR2</button>
-        <button id="klas4BV2">4BV2</button>
-        <button id="klas4BV3">4BV3</button>
-        <button id="klas4ENG3">4ENG3</button>
-        <button id="klas4ENG4">4ENG4</button>
-        <button id="klas4BR3">4BR3</button>
-        <button id="klas4BV1A">4BV1A</button>
-        <button id="klas4BV1B">4BV1B</button>
-        <button id="klasBM2">BM2</button>
-        <button id="klasB4">B4</button>
-        <button id="klas4AM4B">4AM4B</button>
-        <button id="klas4AM3B">4AM3B</button>
-        <button id="klas4AM2B">4AM2B</button>
-        <button id="klas2MI2B">2MI2B</button>
-        <button id="klasYISTDV">YISTDV-S</button>
-        
-        <iframe width="700" height="500" id="myFrame" src="homepage.html"></iframe>
+        <div id="knoppen">
+            <button id="klas2MI1A">2MI1A</button>
+            <button id="klas2MI1B">2MI1B</button>
+            <button id="klas2MI2A">2MI2A</button>
+            <button id="klas3MB1A">3MB1A</button>
+            <button id="klas3MB2A">3MB2A</button>
+            <button id="klas3MB3A">3MB3A</button>
+            <button id="klas4IB1A">4IB1A</button>
+            <button id="klas4IB1B">4IB1B</button>
+            <button id="klas4IB2A">4IB2A</button>
+            <button id="klas4IB3A">4IB3A</button>
+            <button id="klas4IB4A">4IB4A</button>
+            <button id="klas4NB3A">4NB3A</button>
+            <button id="klas4NB4A">4NB4A</button>
+            <button id="klas4AM1A">4AM1A</button>
+            <button id="klas4AM1B">4AM1B</button>
+            <button id="klas4AM2A">4AM2A</button>
+            <button id="klas4AM3A">4AM3A</button>
+            <button id="klas4AM4A">4AM4A</button>
+            <button id="klasYTWK123">YTWK123</button> 
+            <button id="klas4ENG1">4ENG1</button>
+            <button id="klas4ENG2">4ENG2</button>
+            <button id="klas4IT1">4IT1</button>
+            <button id="klas4BM1">4BM1</button>
+            <button id="klas4BR1">4BR1</button>
+            <button id="klas4IT2">4IT2</button>
+            <button id="klas4IT3">4IT3</button>
+            <button id="klas4BM3">4BM3</button>
+            <button id="klas4BR2">4BR2</button>
+            <button id="klas4BV2">4BV2</button>
+            <button id="klas4BV3">4BV3</button>
+            <button id="klas4ENG3">4ENG3</button>
+            <button id="klas4ENG4">4ENG4</button>
+            <button id="klas4BR3">4BR3</button>
+            <button id="klas4BV1A">4BV1A</button>
+            <button id="klas4BV1B">4BV1B</button>
+            <button id="klasBM2">BM2</button>
+            <button id="klasB4">B4</button>
+            <button id="klas4AM4B">4AM4B</button>
+            <button id="klas4AM3B">4AM3B</button>
+            <button id="klas4AM2B">4AM2B</button>
+            <button id="klas2MI2B">2MI2B</button>
+            <button id="klasYISTDV">YISTDV-S</button>
+        </div>
+        <button id="reset">Reset</button>
+        <iframe width="700" height="525" scrolling="no" id="myFrame" src="homepage.html"></iframe>
         <script src="script.js"></script>
-        
     </body>
 </html>
