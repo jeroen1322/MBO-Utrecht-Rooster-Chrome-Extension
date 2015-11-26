@@ -18,15 +18,14 @@ document.getElementById("reset").onclick = function() {
     choiceIsSet(false);
 };
 
-//Huidige week nummer in src link zetten
-var currentWeekNumber = (function(date){
-    date.setHours(0,0,0);
-    date.setDate(date.getDate()+4-(date.getDay()||7));
-    return Math.ceil((((date - new Date(date.getFullYear(),0,1))/8.64e7)+1)/7);
-})(new Date());
-
 // De rest
 function makePageURL(page) {
+        //Huidige week nummer in src link zetten
+    var currentWeekNumber = (function(date){
+        date.setHours(0,0,0);
+        date.setDate(date.getDate()+4-(date.getDay()||7));
+        return Math.ceil((((date - new Date(date.getFullYear(),0,1))/8.64e7)+1)/7);
+    })(new Date());
     return "http://roosters.mboutrecht.nl/TEC/roosters/" + currentWeekNumber + "/c/" + page + '.htm';
 }
 
@@ -92,3 +91,4 @@ if (choice) { // Wanneer er een keuze is gemaakt ...
     // ... zet de iframe op de juiste rooster-pagina en haal de klassen knoppen weg.
     choiceIsSet(true, makePageURL(choice));
 }
+
