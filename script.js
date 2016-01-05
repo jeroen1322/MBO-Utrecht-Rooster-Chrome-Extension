@@ -18,15 +18,22 @@ document.getElementById("reset").onclick = function() {
     choiceIsSet(false);
 };
 
-// De rest
+
+//Krijg de week 
+function getWeek(subject) {
+  var date = new Date(subject.getTime());
+  date.setHours(0, 0, 0, 0);
+  date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+  var week1 = new Date(date.getFullYear(), 0, 4);
+  return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+}
+
+// usage: getWeek(new Date()).toString();
+
+// De .src van de iFrame aanpassen
 function makePageURL(page) {
-        //Huidige week nummer in src link zetten
-    var currentWeekNumber = (function(date){
-        date.setHours(0,0,0);
-        date.setDate(date.getDate()+4-(date.getDay()||7));
-        return Math.ceil((((date - new Date(date.getFullYear(),0,1))/8.64e7)+1)/7);
-    })(new Date());
-    return "http://roosters.mboutrecht.nl/TEC/roosters/" + currentWeekNumber + "/c/" + page + '.htm';
+        //De link up to date houden
+    return "http://roosters.mboutrecht.nl/TEC/roosters/"+ "0" + getWeek(new Date()).toString()+ "/c/" + page + '.htm';
 }
 
 var classes = {
