@@ -1,6 +1,6 @@
 #MBOUtrechtRoosterChromeExtension-
 
-#Het rooster systeem van MBO Utrecht is aangepast waardoor de plugin niet maar accuraat is. 
+#-Het rooster systeem van MBO Utrecht is aangepast waardoor de plugin niet maar accuraat is. 
 #In begin 2016 zal ik de plugin updaten.
 
 Een Chrome extensie waarmee de roosters van de klassen van MBO Utrecht snel kunnen worden bekeken.  
