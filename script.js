@@ -1,13 +1,16 @@
 // Credits aan Stephan Meijer. Heeft JS overzichtelijker gemaakt en DRY geïmplimenteerd
+document.getElementById("extra_knoppen").style.display = "none";
 
 function choiceIsSet(yes, page) {
+
     if (yes) {
         document.getElementById("knoppen").style.display = "none";
-        document.getElementById("reset").style.display = "inline";
+        document.getElementById("extra_knoppen").style.display = "inline-flex";
+        document.getElementById("reset").style.marginRight = "10px";
         document.getElementById("myFrame").src = page;
     } else {
         document.getElementById("knoppen").style.display = "inline";
-        document.getElementById("reset").style.display = "none";
+        document.getElementById("extra_knoppen").style.display = "none";
         document.getElementById("myFrame").src = "homepage.html";
     }
 }
@@ -19,6 +22,7 @@ document.getElementById("reset").onclick = function() {
 };
 
 
+
 //Krijg het huidige weeknummer
 Date.prototype.getWeek = function() {
     var onejan = new Date(this.getFullYear(), 0, 1);
@@ -26,20 +30,19 @@ Date.prototype.getWeek = function() {
 }
 
 var weekNumber = (new Date()).getWeek();
-var correctedWeekNumber = weekNumber - 1;
+var currentWeek = weekNumber - 1;
 
 function checkWeek(){
 
-    if(correctedWeekNumber > 10){
-        return correctedWeekNumber;
+    if(currentWeek > 10){
+        return currentWeek;
     }else{
-        return "0" + correctedWeekNumber;
+        return "0" + currentWeek;
     }
 }
 
 // De .src van de iFrame aanpassen
 function makePageURL(page) {
-        //De link up to date houden
     return "http://roosters.mboutrecht.nl/TEC/roosters/" + checkWeek()  + "/c/" + page + '.htm';
 }
 
