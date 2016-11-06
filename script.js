@@ -84,8 +84,6 @@ var classes = {
   "klas4IB1A": "c00015",
   "klas4IB1B": "c00016",
   "klas4IB2A": "c00017",
-  "klas4IB3A": "c00010",
-  "klas4IB4A": "c00011",
   "klas4NB3A": "c00012",
   "klas4NB4A": "c00013",
   "klas4AM1A": "c00008",
