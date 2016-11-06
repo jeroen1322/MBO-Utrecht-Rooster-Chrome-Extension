@@ -6,10 +6,7 @@
     "author": "Jeroen Grooten",
     "browser_action": {
         "default_icon": "icon.jpg",
-        "default_popup": "popup.html"
-    },
-    "permissions": [
-        "activeTab",
-        "https://ajax.googleapis.com/"
-    ]
+        "default_popup": "popup.html",
+        "default_title": "MBO Utrecht Roosters"
+    }
 }
