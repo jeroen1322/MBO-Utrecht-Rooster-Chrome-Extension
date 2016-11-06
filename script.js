@@ -20,13 +20,11 @@ var knoppen = getById("knoppen");
 var reset = getById("reset");
 var iframe = getById("myFrame");
 var homepage = "homepage.html";
+var volgendeWeekKnop = document.getElementById("volgende_week");
 
 iframe.src = homepage;
 extraKnoppen.display("none");
 
-// var test = iframe.contentDocument.getElementsByTagName("body")[0];
-// var test = document.getElementById("myFrame").contentWindow.document.getElementsByTagName("body");
-var frame = document.getElementById("myFrame");
 
 function choiceIsSet(yes, page) {
   if (yes) {
@@ -70,6 +68,7 @@ function makePageURL(page) {
   var URL = "http://roosters.mboutrecht.nl/TEC/roosters/" + chooseWeek()  + "/c/" + page + '.htm';
   return URL;
 }
+
 
 var classes = {
   "klas2MI1A": "c00001",
