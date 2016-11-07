@@ -20,7 +20,8 @@ var knoppen = getById("knoppen");
 var reset = getById("reset");
 var iframe = getById("myFrame");
 var homepage = "homepage.html";
-var volgendeWeekKnop = document.getElementById("volgende_week");
+var volgendeWeekKnop = getById("volgende_week");
+var vorigeWeekKnop = getById("vorige_week");
 
 iframe.src = homepage;
 extraKnoppen.display("none");
@@ -53,15 +54,41 @@ Date.prototype.getWeek = function() {
 var weekNumber = (new Date()).getWeek();
 
 var currentWeek = weekNumber - 1;
-var nextWeek = currentWeek + 1;
+var nextWeek = weekNumber;
+var volgendeWeek = false;
+var checkVolgendeWeek = volgendeWeek;
 
 function chooseWeek(){
-  if(currentWeek > 10){
+  if(volgendeWeek != checkVolgendeWeek){
+    volgendeWeekKnop.display("none");
+    vorigeWeekKnop.display("block");
+    console.log("Not equal");
+    if(currentWeek > 10){
+      return nextWeek;
+    }else{
+      return "0" + nextWeek;
+    }
+  } else {
+    vorigeWeekKnop.display("none");
+    volgendeWeekKnop.display("block");
+    console.log("equal");
+    if(currentWeek > 10){
       return currentWeek;
-  }else{
+    }else{
       return "0" + currentWeek;
+    }
   }
 }
+
+volgendeWeekKnop.onclick = function(){
+  volgendeWeek = true;
+  setWeek();
+}
+vorigeWeekKnop.onclick = function(){
+  volgendeWeek = false;
+  setWeek();
+}
+
 
 // De .src van de iFrame aanpassen
 function makePageURL(page) {
@@ -137,7 +164,11 @@ for (var keyClass in classes) {
 
 var choice = localStorage.getItem('choice');
 
-if (choice) { // Wanneer er een keuze is gemaakt ...
-  // ... zet de iframe op de juiste rooster-pagina en haal de klassen knoppen weg.
-  choiceIsSet(true, makePageURL(choice));
+function setWeek(){
+  if (choice) { // Wanneer er een keuze is gemaakt ...
+    // ... zet de iframe op de juiste rooster-pagina en haal de klassen knoppen weg.
+    choiceIsSet(true, makePageURL(choice));
+  }
 }
+
+setWeek();
