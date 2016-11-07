@@ -20,6 +20,8 @@ var knoppen = getById("knoppen");
 var reset = getById("reset");
 var iframe = getById("myFrame");
 var homepage = "homepage.html";
+// var getVolgendeWeekKnop = document.getElementById("volgende_week");
+// var getVorigeWeekKnop = document.getElementById("vorige_week");
 var volgendeWeekKnop = getById("volgende_week");
 var vorigeWeekKnop = getById("vorige_week");
 
@@ -80,10 +82,10 @@ function chooseWeek(){
   }
 }
 
-volgendeWeekKnop.onclick = function(){
-  volgendeWeek = true;
-  setWeek();
-}
+// volgendeWeekKnop.onclick = function(){
+//   volgendeWeek = true;
+//   setWeek();
+// }
 vorigeWeekKnop.onclick = function(){
   volgendeWeek = false;
   setWeek();
@@ -157,16 +159,18 @@ for (var keyClass in classes) {
   (function(page, keyClass) {
       document.getElementById(keyClass).onclick = function() {
           localStorage.setItem('choice', page);
+          console.log(page);
           choiceIsSet(true, makePageURL(page));
       };
   })(page, keyClass);
 }
 
 var choice = localStorage.getItem('choice');
-
+console.log(choice);
 function setWeek(){
   if (choice) { // Wanneer er een keuze is gemaakt ...
     // ... zet de iframe op de juiste rooster-pagina en haal de klassen knoppen weg.
+    console.log(choice);
     choiceIsSet(true, makePageURL(choice));
   }
 }
