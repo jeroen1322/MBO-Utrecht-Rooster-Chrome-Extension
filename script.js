@@ -84,11 +84,11 @@ function chooseWeek(){
 
 volgendeWeekKnop.onclick = function(){
   volgendeWeek = true;
-  setWeek();
+  setPage();
 }
 vorigeWeekKnop.onclick = function(){
   volgendeWeek = false;
-  setWeek();
+  setPage();
 }
 
 
@@ -153,7 +153,7 @@ var classes = {
 
 };
 
-function setWeek(){
+function setPage(){
   for (var keyClass in classes) {
     var page = classes[keyClass] || 'notfound';
 
@@ -176,4 +176,4 @@ function setWeek(){
   }
 }
 
-setWeek();
+setPage();
