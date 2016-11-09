@@ -1,4 +1,3 @@
-
 function getById(id){
   var obj = document.getElementById(id);
 
