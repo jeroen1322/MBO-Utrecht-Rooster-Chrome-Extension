@@ -1,3 +1,4 @@
+//A function to impliment DRY, so I can use native JS but don't have to type too much.
 function getById(id){
   var obj = document.getElementById(id);
 
@@ -14,20 +15,19 @@ function getById(id){
   return obj;
 }
 
+//Declare some vars with some that will be used with the getBYId function.
 var extraKnoppen = getById("extra_knoppen");
 var knoppen = getById("knoppen");
 var reset = getById("reset");
 var iframe = getById("myFrame");
-var homepage = "homepage.html";
-// var getVolgendeWeekKnop = document.getElementById("volgende_week");
-// var getVorigeWeekKnop = document.getElementById("vorige_week");
 var volgendeWeekKnop = getById("volgende_week");
 var vorigeWeekKnop = getById("vorige_week");
+var homepage = "homepage.html";
 
-iframe.src = homepage;
-extraKnoppen.display("none");
+iframe.src = homepage; //Declare the default source of the iFrame
+extraKnoppen.display("none"); //Hide the div 'extraKnoppen'
 
-
+//Function to check if the user has picked a klas (choice) and act accordingly
 function choiceIsSet(yes, page) {
   if (yes) {
     knoppen.display("none");
@@ -40,6 +40,7 @@ function choiceIsSet(yes, page) {
     iframe.src = homepage;
   }
 }
+
 // Verwijder localStorage data zodat de klas opnieuw gekozen kan worden
 document.getElementById("reset").onclick = function() {
   localStorage.removeItem("choice");
@@ -52,18 +53,19 @@ Date.prototype.getWeek = function() {
   return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
 }
 
+//Declare some vars
 var weekNumber = (new Date()).getWeek();
-
 var currentWeek = weekNumber - 1;
 var nextWeek = weekNumber;
 var volgendeWeek = false;
 var checkVolgendeWeek = volgendeWeek;
 
+//Function to parse the week number correctly
+//And also check what week to dislay. The current week or next week.
 function chooseWeek(){
   if(volgendeWeek != checkVolgendeWeek){
     volgendeWeekKnop.display("none");
     vorigeWeekKnop.display("block");
-    console.log("Not equal");
     if(currentWeek > 10){
       return nextWeek;
     }else{
@@ -72,7 +74,6 @@ function chooseWeek(){
   } else {
     vorigeWeekKnop.display("none");
     volgendeWeekKnop.display("block");
-    console.log("equal");
     if(currentWeek > 10){
       return currentWeek;
     }else{
@@ -81,6 +82,9 @@ function chooseWeek(){
   }
 }
 
+//If the buttons are clicked, manipulate the vars
+//And run setPage() to reload the iFrame.
+//The logic in chooseWeek() will choose what week to display
 volgendeWeekKnop.onclick = function(){
   volgendeWeek = true;
   setPage();
@@ -91,13 +95,13 @@ vorigeWeekKnop.onclick = function(){
 }
 
 
-// De .src van de iFrame aanpassen
+//Parse the weeknumber to the iFrame and also the code of the selected klas.
 function makePageURL(page) {
   var URL = "http://roosters.mboutrecht.nl/TEC/roosters/" + chooseWeek()  + "/c/" + page + '.htm';
   return URL;
 }
 
-
+//A whole bunch of fucking shit I had to type by hand.
 var classes = {
   "klas2MI1A": "c00001",
   "klas2MI1B": "c00002",
@@ -152,6 +156,8 @@ var classes = {
 
 };
 
+//Get the code from the selected class
+//And also put the choise in the localStorage.
 function setPage(){
   for (var keyClass in classes) {
     var page = classes[keyClass] || 'notfound';
@@ -159,20 +165,18 @@ function setPage(){
     (function(page, keyClass) {
         document.getElementById(keyClass).onclick = function() {
             localStorage.setItem('choice', page);
-            console.log(page);
             choiceIsSet(true, makePageURL(page));
         };
     })(page, keyClass);
   }
 
+  //If there is a choise set, run the function that makes the page
+  //And takes in to account what page to display.
   var choice = localStorage.getItem('choice');
-  console.log(choice);
-
-  if (choice) { // Wanneer er een keuze is gemaakt ...
-    // ... zet de iframe op de juiste rooster-pagina en haal de klassen knoppen weg.
-    console.log(choice);
+  if (choice) {
     choiceIsSet(true, makePageURL(choice));
   }
 }
 
+//Run by default
 setPage();
