@@ -41,16 +41,24 @@ function choiceIsSet(yes, page) {
   }
 }
 
-// Verwijder localStorage data zodat de klas opnieuw gekozen kan worden
+// Delete the selected klas from localStorage to make it possible to
+// Select a new klas
 document.getElementById("reset").onclick = function() {
   localStorage.removeItem("choice");
   choiceIsSet(false);
 };
 
-//Krijg het huidige weeknummer
+//Get the current week number
 Date.prototype.getWeek = function() {
   var onejan = new Date(this.getFullYear(), 0, 1);
   return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+}
+
+//Get the current day (i.e Monday = 1, Sunday = 7 etc)
+function getCurrentDay(){
+  var day = new Date();
+  var currentDay = day.getDay();
+  return currentDay;
 }
 
 //Declare some vars
@@ -58,7 +66,7 @@ var weekNumber = (new Date()).getWeek();
 var currentWeek = weekNumber - 1;
 var nextWeek = weekNumber;
 var volgendeWeek = false;
-var checkVolgendeWeek = volgendeWeek;
+var checkVolgendeWeek = volgendeWeek; //This is a hack-y way to check if the week is changed.
 
 //Function to parse the week number correctly
 //And also check what week to dislay. The current week or next week.
