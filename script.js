@@ -72,7 +72,6 @@ var checkVolgendeWeek = volgendeWeek; //This is a hack-y way to check if the wee
 //And also check what week to dislay. The current week or next week.
 function chooseWeek(){
   if(volgendeWeek != checkVolgendeWeek || getCurrentDay() >= 6){
-    console.log("De week" + nextWeek);
     volgendeWeekKnop.display("none");
     vorigeWeekKnop.display("block");
     if(currentWeek > 10){
@@ -80,7 +79,12 @@ function chooseWeek(){
     }else{
       return "0" + nextWeek;
     }
-  } else {
+  }else if(currentWeek == 0) {
+    vorigeWeekKnop.display("none");
+    volgendeWeekKnop.display("block");
+    currentWeek = 1;
+    return "0" + currentWeek;
+  }else {
     vorigeWeekKnop.display("none");
     volgendeWeekKnop.display("block");
     if(currentWeek > 10){
