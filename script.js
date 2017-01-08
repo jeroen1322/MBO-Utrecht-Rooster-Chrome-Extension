@@ -110,7 +110,6 @@ vorigeWeekKnop.onclick = function(){
 
 //Parse the weeknumber to the iFrame and also the code of the selected klas.
 function makePageURL(page) {
-  console.log(page);
   var URL = "http://roosters.mboutrecht.nl/TEC/roosters/" + chooseWeek()  + "/c/" + page + '.htm';
   return URL;
 }
@@ -188,7 +187,6 @@ function setPage(){
   //And takes in to account what page to display.
   var choice = localStorage.getItem('choice');
   if (choice) {
-    //console.log(choice);
     choiceIsSet(true, makePageURL(choice));
   }
 }
