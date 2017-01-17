@@ -2,7 +2,7 @@
 
 Een Chrome extensie waarmee de roosters van de klassen van MBO Utrecht snel kunnen worden bekeken.  
 
-##### momenteel kunnen alleen de roosters van de Avademie Voor Techniek & ICT bekeken worden. Misschien worden er in de toekomst meer toegevoegd. 
+##### momenteel kunnen alleen de roosters van de Academie Voor Techniek & ICT bekeken worden. Misschien worden er in de toekomst meer toegevoegd. 
 
 #Waarom?
 MBO Utrecht gebruikt roostersoftware (Untis) met een zeer slechte UX. Ik dacht, dit kan beter. 
