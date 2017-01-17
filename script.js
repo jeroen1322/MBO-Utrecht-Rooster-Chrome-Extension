@@ -50,7 +50,7 @@ document.getElementById("reset").onclick = function() {
 
 //Get the current week number
 Date.prototype.getWeek = function() {
-  var onejan = new Date(this.getFullYear(), 0, 1);
+  var onejan = new Date(this.getFullYear(), 0, 0);
   return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
 }
 
@@ -62,8 +62,8 @@ function getCurrentDay(){
 }
 
 //Declare some vars
-var weekNumber = (new Date()).getWeek();
-var currentWeek = weekNumber - 1;
+var weekNumber = 4//(new Date()).getWeek();
+var currentWeek = weekNumber -1;
 var nextWeek = weekNumber;
 var volgendeWeek = false;
 var checkVolgendeWeek = volgendeWeek; //This is a hack-y way to check if the week is changed.
