@@ -62,7 +62,7 @@ function getCurrentDay(){
 }
 
 //Declare some vars
-var weekNumber = 4//(new Date()).getWeek();
+var weekNumber = (new Date()).getWeek();
 var currentWeek = weekNumber -1;
 var nextWeek = weekNumber;
 var volgendeWeek = false;
