@@ -133,8 +133,8 @@ var classes = {
   //"klas4NB4A": "c00013",
   "klas4AM1A": "c00012",
   "klas4AM1B": "c00013",
-  "klas4AM2A": "c00014",
-  "klas4AM3A": "c00015",
+  "klas4AM2A": "c00015",
+  // "klas4AM3A": "c00015", TODO DIT FUCKING FIXEN!
   "klas4AM3B": "c00016",
   "klas4AM4A": "c00017",
   "klas4AM4B": "c00018",
