@@ -1,4 +1,6 @@
-#MBOUtrechtRoosterChromeExtension-
+**_# NIET MEER IN ONTWIKKELING EN NIET MEER ONDERSTEUND_**
+
+# MBOUtrechtRoosterChromeExtension-
 
 Een Chrome extensie waarmee de roosters van de klassen van MBO Utrecht snel kunnen worden bekeken.  
 
